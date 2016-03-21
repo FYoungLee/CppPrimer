@@ -27,7 +27,7 @@ bool compare(int * const pb1, int * const pb2)
 	if (sizeof(pb1) != sizeof(pb2)) // have different size.
 		return false;
 	else {
-		for (int i = 0; i < sizeof(pb1); ++i)
+		for (int i = 0; i < sizeof(pb1) / sizeof(decltype(*arr1)); ++i)
 			if (pb1[i] != pb2[i])
 				return false;
 	}
