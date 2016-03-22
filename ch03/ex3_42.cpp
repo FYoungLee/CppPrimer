@@ -14,6 +14,11 @@ int main()
 
     for (int* i = begin(int_arr); i != end(int_arr); ++i)
         *i = ivec[i - begin(int_arr)];
+        
+    /*{
+		int *pi = int_arr2;
+		for (int &i : ivec) { *pi = i; ++pi; }
+	}*/
 
     for (auto i : int_arr) cout << i << " ";
     cout << endl;
