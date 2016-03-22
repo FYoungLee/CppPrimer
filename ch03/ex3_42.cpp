@@ -15,7 +15,7 @@ int main()
         *i = ivec[i - begin(int_arr)];
         
     /*{
-	int *pi = int_arr2;
+	int *pi = int_arr;
 	for (int &i : ivec) { *pi = i; ++pi; }
     }*/
 
