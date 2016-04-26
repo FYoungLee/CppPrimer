@@ -15,7 +15,6 @@
 using std::string;
 
 #include <iostream>
-
 void Replace(string& s, const string& oldVal, const string& newVal)
 {
     for (auto beg = s.begin(); beg != s.end(); ++beg) {
@@ -30,6 +29,15 @@ void Replace(string& s, const string& oldVal, const string& newVal)
             beg = std::next(s.begin(), pos + newVal.size() - 1);
         }
     }
+}
+/* using .find() way*/
+void abbrev(string & s, string & oldVal, string & newVal) {
+	while (s.find(oldVal) >= 0 && s.find(oldVal) < s.size()) {
+		auto pos = s.begin() + s.find(oldVal);
+		auto epos = s.begin() + s.find(oldVal) + oldVal.size();
+		s.erase(pos, epos);
+		s.insert(pos, newVal.begin(), newVal.end());
+	}
 }
 
 int main()
