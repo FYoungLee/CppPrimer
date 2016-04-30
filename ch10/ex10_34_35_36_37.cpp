@@ -107,12 +107,6 @@ inline void vec2list_3_7_reverse(const std::vector<int>& v, std::list<int>& l)
     //!    ^                  ^^
     //! rend                  rbegin
     std::copy(v.crbegin() + 3, v.crbegin() + 8, std::back_inserter(l));
-    
-    /*
-    **what if we dont know how many contents in vector? so I wrote this:**
-    auto rstart = find(ivec.crbegin(), ivec.crend(), *(ivec.begin() + 6));
-    copy(rstart, ivec.crend() - 2 , back_inserter(ilst));
-    */
     //!                                  ^
     //! @note: std::copy copies the range [first,last) into result.
     //!        hence, the arguments here denote:
@@ -120,4 +114,11 @@ inline void vec2list_3_7_reverse(const std::vector<int>& v, std::list<int>& l)
     //!                   ^ this one is specified but not included.
     //! @note: also const vecrions if functions can be used.  v.crbegin() and
     //! v.crbegin()
+    
+        
+    /*
+    **what if we dont know how many contents in vector? so I wrote this:**
+    auto rstart = find(ivec.crbegin(), ivec.crend(), *(ivec.begin() + 6));
+    copy(rstart, ivec.crend() - 2 , back_inserter(ilst));
+    */
 }
